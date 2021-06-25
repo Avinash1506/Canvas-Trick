@@ -46,4 +46,11 @@ function draw(e) {
       canvCtx.globalCompositeOperation = "source-over";
     }
   }
+  document.addEventListener("mousemove", draw);
+document.addEventListener("mousedown", (e) => {
+  isDraw = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+document.addEventListener("mouseup", () => (isDraw = false));
+document.addEventListener("mouseout", () => (isDraw = false));
 }
