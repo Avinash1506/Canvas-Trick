@@ -36,7 +36,9 @@ function draw(e) {
     }
     if (c == 0) {
       canvCtx.globalCompositeOperation = "copy";
-    } else if (c == 2) {
+    } else if(c==1){
+      canvCtx.globalCompositeOperation = "difference";
+    }else if (c == 2) {
       canvCtx.globalCompositeOperation = "xor";
     } else if (c == 3) {
       canvCtx.globalCompositeOperation = "hue";
