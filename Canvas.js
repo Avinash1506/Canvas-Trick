@@ -36,13 +36,13 @@ function draw(e) {
     }
     if (c == 0) {
       canvCtx.globalCompositeOperation = "copy";
-    } else if (c == 2) {
+    } else if(c==1){
+      canvCtx.globalCompositeOperation = "exclusion";
+    }else if (c == 2) {
       canvCtx.globalCompositeOperation = "xor";
-    } else if (c == 3) {
-      canvCtx.globalCompositeOperation = "hue";
     } else {
-      canvCtx.globalCompositeOperation = "source-over";
-    }
+      canvCtx.globalCompositeOperation = "hue";
+    } 
   }
 }
 document.addEventListener("mousemove", draw);
