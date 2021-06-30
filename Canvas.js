@@ -37,7 +37,7 @@ function draw(e) {
     if (c == 0) {
       canvCtx.globalCompositeOperation = "copy";
     } else if(c==1){
-      canvCtx.globalCompositeOperation = "exclusion";
+      canvCtx.globalCompositeOperation = "saturation";
     }else if (c == 2) {
       canvCtx.globalCompositeOperation = "xor";
     } else {
