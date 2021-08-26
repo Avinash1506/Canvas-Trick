@@ -46,9 +46,16 @@ function draw(e) {
   }
 }
 document.addEventListener("mousemove", draw);
+document.addEventListener("touchmove", draw);
 document.addEventListener("mousedown", (e) => {
   isDraw = true;
   [lastX, lastY] = [e.offsetX, e.offsetY];
 });
+document.addEventListener("touchstart", (e) => {
+  isDraw = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+
 document.addEventListener("mouseup", () => (isDraw = false));
+document.addEventListener("touchend", () => (isDraw = false));
 document.addEventListener("mouseout", () => (isDraw = false));
