@@ -36,19 +36,26 @@ function draw(e) {
     }
     if (c == 0) {
       canvCtx.globalCompositeOperation = "copy";
-    } else if(c==1){
-      canvCtx.globalCompositeOperation = "saturation";
-    }else if (c == 2) {
+    } else if (c == 2) {
       canvCtx.globalCompositeOperation = "xor";
-    } else {
+    } else if (c == 3) {
       canvCtx.globalCompositeOperation = "hue";
-    } 
+    } else {
+      canvCtx.globalCompositeOperation = "source-over";
+    }
   }
 }
 document.addEventListener("mousemove", draw);
+document.addEventListener("touchmove", draw);
 document.addEventListener("mousedown", (e) => {
   isDraw = true;
   [lastX, lastY] = [e.offsetX, e.offsetY];
 });
+document.addEventListener("touchstart", (e) => {
+  isDraw = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+});
+
 document.addEventListener("mouseup", () => (isDraw = false));
+document.addEventListener("touchend", () => (isDraw = false));
 document.addEventListener("mouseout", () => (isDraw = false));
